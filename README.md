@@ -1,14 +1,13 @@
 # diarization-research
 
 ## Модели
-
+**PyAnnotate** <br>
 pyannote/speaker-diarization-3.1
 [ссылка](https://huggingface.co/pyannote/speaker-diarization-3.1) <br>
 
 <details>
   <summary>Подробно о модели.</summary>
   
-  Модель для диаризации: <br>
   1. Разделяет аудиозапись на сегменты, где активен каждый говорящий. <br>
   2. Присваивает каждому сегменту уникальный идентификатор говорящего. <br>
 
@@ -124,9 +123,49 @@ pyannote/speaker-diarization-3.1
 </details>
 
 <details>
+  <summary>Fine-tuned версии от пользователей HaggingFace</summary>
+
+  |Модель|Результаты|Гиперпараметры|Данные для дообучения|
+  |-|--------|---|--|
+  |[JSWOOK/pyannote_3_fine_tuning](https://huggingface.co/JSWOOK/pyannote_3_fine_tuning)|Loss: 0.3134 <br> Model Preparation Time: 0.0048<br> Der: 0.0888<br> False Alarm: 0.0134<br> Missed Detection: 0.0337<br> Confusion: 0.0417|learning_rate: 5e-05<br> train_batch_size: 32<br> eval_batch_size: 32<br> seed: 42<br> optimizer: Adam with betas=(0.9,0.999) and epsilon=1e-08<br> lr_scheduler_type: cosine<br> num_epochs: 10|[diarizers-community/voxconverse dataset](https://huggingface.co/datasets/diarizers-community/voxconverse)|
+  |||||
+  |||||
+  
+</details>
+
+<details>
   <summary></summary>
   текст
   ```
-
+  п
   ```
 </details>
+
+## Датасет
+**VoxConverse**
+[diarizers-community/voxconverse](https://huggingface.co/datasets/diarizers-community/voxconverse)
+
+<details>
+  <summary>О датасете</summary>
+  50 часов звучащей речи. Преимущественно английский язык.
+  
+  Датасет содержит следующие данные:
+
+  - **Аудиозаписи**
+  
+    - Формат: .wav (16 кГц, моно).
+    
+    - Источники: Публичные видео с YouTube (например, интервью, дебаты, ток-шоу).
+  
+  - **Аннотации**
+  
+    - Формат: RTTM (Rich Transcription Time Marked).
+    
+    - Содержание: Временные метки для каждого сегмента речи с указанием идентификатора говорящего.
+  
+  **Плюсы**
+  1. Реальная и разнообразная речь: ютуб-шоу, дебаты.
+  2. Открыт и готов к использованию.
+  3. Аннотации прописаны вручную.
+</details>
+
