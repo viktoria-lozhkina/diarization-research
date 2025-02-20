@@ -128,7 +128,7 @@ pyannote/speaker-diarization-3.1
   |Модель|Результаты|Гиперпараметры|Данные для дообучения|
   |-|--------|---|--|
   |[JSWOOK/pyannote_3_fine_tuning](https://huggingface.co/JSWOOK/pyannote_3_fine_tuning)|Loss: 0.3134 <br> Model Preparation Time: 0.0048<br> Der: 0.0888<br> False Alarm: 0.0134<br> Missed Detection: 0.0337<br> Confusion: 0.0417|learning_rate: 5e-05<br> train_batch_size: 32<br> eval_batch_size: 32<br> seed: 42<br> optimizer: Adam with betas=(0.9,0.999) and epsilon=1e-08<br> lr_scheduler_type: cosine<br> num_epochs: 10|[diarizers-community/voxconverse dataset](https://huggingface.co/datasets/diarizers-community/voxconverse)|
-  |[nairaxo/diarization-model-ary](https://huggingface.co/nairaxo/diarization-model-ary)|Loss: 0.3412<br> Der: 0.1116<br> False Alarm: 0.0194<br> Missed Detection: 0.0267<br> Confusion: 0.0655|learning_rate: 0.001<br> train_batch_size: 32<br> eval_batch_size: 32<br> seed: 42<br> optimizer: Use OptimizerNames.ADAMW_TORCH with betas=(0.9,0.999) and epsilon=1e-08 and optimizer_args=No additional optimizer arguments<br> lr_scheduler_type: cosine<br> num_epochs: 5||
+  |[nairaxo/diarization-model-ary](https://huggingface.co/nairaxo/diarization-model-ary) <br><br> [статья автора о диаризации](https://arxiv.org/pdf/2412.12143)|Loss: 0.3412<br> Der: 0.1116<br> False Alarm: 0.0194<br> Missed Detection: 0.0267<br> Confusion: 0.0655|learning_rate: 0.001<br> train_batch_size: 32<br> eval_batch_size: 32<br> seed: 42<br> optimizer: Use OptimizerNames.ADAMW_TORCH with betas=(0.9,0.999) and epsilon=1e-08 and optimizer_args=No additional optimizer arguments<br> lr_scheduler_type: cosine<br> num_epochs: 5||
   |||||
   
 </details>
