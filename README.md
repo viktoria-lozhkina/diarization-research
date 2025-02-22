@@ -1,9 +1,8 @@
 # diarization-research
 
-## Модели
+## Модели для диаризации
 **PyAnnotate** <br>
-pyannote/speaker-diarization-3.1
-[ссылка](https://huggingface.co/pyannote/speaker-diarization-3.1) <br>
+[pyannote/speaker-diarization-3.1](https://huggingface.co/pyannote/speaker-diarization-3.1) <br>
 
 <details>
   <summary>Подробно о модели.</summary>
@@ -133,15 +132,8 @@ pyannote/speaker-diarization-3.1
   
 </details>
 
-<details>
-  <summary></summary>
-  текст
-  ```
-  п
-  ```
-</details>
 
-## Датасет
+## Датасет для обучения моделей диаризации
 **VoxConverse**
 [diarizers-community/voxconverse](https://huggingface.co/datasets/diarizers-community/voxconverse)
 
@@ -169,23 +161,54 @@ pyannote/speaker-diarization-3.1
   3. Аннотации прописаны вручную.
 </details>
 
-## Сепарация говорящих
+## Решения для сегментации говорящих
 Ниже собраны интересные решения для задачи разделения говорящих (без диаризации = без идентификации конкретного говорящего).
+
+### Модель от PyAnnotate
+[pyannote/segmentation-3.0](https://huggingface.1319lm.top/pyannote/segmentation-3.0)
+
+<details>
+  <summary>О модели</summary>
+  Модель возвращает временные метки (start, end) для каждого сегмента, где активна речь. <br>
+  
+  **Преимущества:**
+  
+  - Легко интегрируется в другие решения от библиотеки PyAnnotate.audio <br>
+  - Хорошо работает с шумными аудио.
+  - Обучена на комбинации стандартных датасетов (AISHELL, AliMeeting, AMI, AVA-AVD, DIHARD, Ego4D, MSDWild, REPERE, and VoxConverse).
+  - 
+    **Недостатки:**
+  
+  - Требует много вычислительных ресурсов.<br>
+  - Модель обучена в основном на английской речи, может хуже справляться с другими языками.
+  - Может хуже справляться с нетипичными сценариями (данные обучения — дебаты, ток-шоу, интервью, телефонные разговоры).
+</details>
 
 ### Архитектура SepFormer
 <details>
   <summary>Подробнее</summary>
   
   Архитектура нейросети, основанная на трансформерах и механизме self-attention.<br>
-  **Характеристики:** <br>
-    - Масштабируется (работает с 2-3 и более говорящими).<br>
-    - Учитывает контекст аудио (self-attention анализирует глобальные зависимости в аудиосигнале).<br>
-    - Эффективно работает с шумом.<br>
+  **Характеристики:** 
+  
+  - Масштабируется (работает с 2-3 и более говорящими).<br>
+  - Учитывает контекст аудио (self-attention анализирует глобальные зависимости в аудиосигнале).<br>
+  - Эффективно работает с шумом.<br>
     
-  **Недостатки:** <br>
-    - Трансформеры требует много вычислительных ресурсов.<br>
-    - Для обучения SepFormer требуется большой объем размеченных данных.
+  **Недостатки:**
+  
+  - Трансформеры требует много вычислительных ресурсов.<br>
+  - Для обучения SepFormer требуется большой объем размеченных данных.
 
   **Модели:**
-    - [speechbrain/sepformer-wham](https://huggingface.1319lm.top/speechbrain/sepformer-wham)
+  
+  - [speechbrain/sepformer-wham](https://huggingface.1319lm.top/speechbrain/sepformer-wham)
+</details>
+
+<details>
+  <summary></summary>
+  текст
+  ```
+  п
+  ```
 </details>
