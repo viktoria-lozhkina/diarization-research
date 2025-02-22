@@ -139,6 +139,56 @@
   - Для эмбеддинга: [pyannote/embedding](https://huggingface.1319lm.top/pyannote/embedding)
 </details>
 
+**NVIDIA** <br>
+[nvidia/diar_sortformer_4spk-v1](https://huggingface.co/nvidia/diar_sortformer_4spk-v1) <br>
+<details>
+  <summary>Подробно о модели.</summary>
+  Предобученная модель для диаризции от NVIDIA. Поддерживает распознавание до 4 спикеров.
+
+  - **Архитектура:** Sortformer ([Статья "Sortformer: Seamless Integration of Speaker Diarization and ASR by Bridging Timestamps and Tokens"](https://arxiv.org/pdf/2409.06656)) — новая архитектура для диаризации, основана на трансформерах + механизм self-attention. Новизна заключается в сортировке и перестановке элементов последовательности.
+
+*Модель динамически перестраивает входные данные (например, спектрограммы) в порядке, который лучше подходит для разделения звука. Это позволяет модели более эффективно выделять целевые источники звука.*
+
+  - На вход подается моноканальное аудио (обычно .wav с ЧД 16 кГц).
+  - На выходе получаем матрицу TхS:
+    - S — максимальное количество говорящих. T — общее количество фреймов, включая заполненные нулями. Каждый фрейм соответствует сегменту аудио длительностью 0,08 секунды.
+Каждый элемент матрицы T x S представляет вероятность активности говорящего в диапазоне [0, 1]. Например, элемент матрицы a(150, 2) = 0,95 указывает на 95% вероятность активности второго говорящего в течение временного диапазона [12,00, 12,08] секунд.
+
+  **Ограничения:**
+
+  - Оптимизирована на распознавание до 4 говорящих. Если спикеров больше — может снизиться качество.
+  - Работает в офлайн-режиме (The model operates in a non-streaming mode (offline mode)).
+  - Максимальная продолжительность тестовой записи зависит от доступной памяти GPU. Для модели RTX A6000 48GB предел составляет около 12 минут.
+  - Модель была обучена на общедоступных наборах речевых данных, в основном на английском языке. В результате: а) Производительность может ухудшиться на русской речи. и б) Производительность также может ухудшиться на данных, не похожих на обучающие, например записи в шумных условиях.
+</details>
+
+<details>
+  <summary>Датасеты.</summary>
+  
+  Sortformer был обучен на комбинации 2030 часов реальных разговоров и 5150 часов или имитированных аудиосмесей, созданных симулятором речевых данных NeMo.
+
+  Training Datasets (Real conversations)
+  
+  - Fisher English (LDC)
+  - 2004-2010 NIST Speaker Recognition Evaluation (LDC)
+  - Librispeech
+  - AMI Meeting Corpus
+  - VoxConverse-v0.3
+  - ICSI
+  - AISHELL-4
+  - Third DIHARD Challenge Development (LDC)
+  - 2000 NIST Speaker Recognition Evaluation, split1 (LDC)
+
+Training Datasets (Used to simulate audio mixtures)
+
+- 2004-2010 NIST Speaker Recognition Evaluation (LDC)
+- Librispeech
+
+  ```
+  п
+  ```
+</details>
+
 ## Датасет для обучения моделей диаризации
 **VoxConverse**
 [diarizers-community/voxconverse](https://huggingface.co/datasets/diarizers-community/voxconverse)
