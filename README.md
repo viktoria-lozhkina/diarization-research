@@ -1,7 +1,7 @@
 # diarization-research
 
 ## Модели для диаризации
-**PyAnnotate** <br>
+### PyAnnotate <br>
 [pyannote/speaker-diarization-3.1](https://huggingface.co/pyannote/speaker-diarization-3.1) <br>
 
 <details>
@@ -139,7 +139,7 @@
   - Для эмбеддинга: [pyannote/embedding](https://huggingface.1319lm.top/pyannote/embedding)
 </details>
 
-**NVIDIA** <br>
+### NVIDIA
 [nvidia/diar_sortformer_4spk-v1](https://huggingface.co/nvidia/diar_sortformer_4spk-v1) <br>
 <details>
   <summary>Подробно о модели.</summary>
@@ -183,11 +183,19 @@ Training Datasets (Used to simulate audio mixtures)
 
 - 2004-2010 NIST Speaker Recognition Evaluation (LDC)
 - Librispeech
-
-  ```
-  п
-  ```
 </details>
+
+<details>
+  <summary>Как обучалась модель.</summary>
+  
+  - Обучалась на 8 nodes of 8×NVIDIA Tesla V100 GPUs.
+  - Использовались 90 секундные обучающие образцы.
+  - batch size: 4.
+  - [Пример скрипта для обучения](https://github.com/NVIDIA/NeMo/blob/main/examples/speaker_tasks/diarization/neural_diarizer/sortformer_diar_train.py).
+  - [base config](https://github.com/NVIDIA/NeMo/blob/main/examples/speaker_tasks/diarization/conf/neural_diarizer/sortformer_diarizer_hybrid_loss_4spk-v1.yaml).
+</details>
+
+[Репозиторий от NVIDIA NeMo на Github](https://github.com/NVIDIA/NeMo/tree/main/examples/speaker_tasks/diarization) , посвящен задачам диаризации.
 
 ## Датасет для обучения моделей диаризации
 **VoxConverse**
