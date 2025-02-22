@@ -132,6 +132,12 @@
   
 </details>
 
+<details>
+  <summary>Другие полезные модели от PyAnnotate</summary>
+
+  - Для сегментации: [pyannote/segmentation-3.0](https://huggingface.1319lm.top/pyannote/segmentation-3.0) (описана ниже)
+  - Для эмбеддинга: [pyannote/embedding](https://huggingface.1319lm.top/pyannote/embedding)
+</details>
 
 ## Датасет для обучения моделей диаризации
 **VoxConverse**
