@@ -301,6 +301,15 @@ Training Datasets (Used to simulate audio mixtures)
 
 [Задача диаризации с использованием данного корпуса от SpeechBrain.](https://github.com/speechbrain/speechbrain/blob/develop/recipes/AMI/Diarization/README.md)
 
+<details>
+  <summary>Другие датасеты в обзоре SpeechBrain.</summary>
+  
+  * SpeechBrain собрали перечень датасетов для разных задач обработки речи ([GitHub](https://github.com/speechbrain/speechbrain/tree/develop/recipes)). Из интересного -> [Speaker recognition на данных VoxCeleb](https://github.com/speechbrain/speechbrain/tree/develop/recipes/VoxCeleb/SpeakerRec).
+
+  * Датасетов для диаризации больше не представлено.
+
+</details>
+
 **3) DIHARD**
 В РАЗРАБОТКЕ
 
