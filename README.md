@@ -246,14 +246,21 @@ Training Datasets (Used to simulate audio mixtures)
 </details>
 
 
-[speechbrain/spkrec-ecapa-voxceleb](https://huggingface.co/speechbrain/spkrec-ecapa-voxceleb) <br>
+[speechbrain/emotion-diarization-wavlm-large](https://huggingface.co/speechbrain/spkrec-ecapa-voxceleb) <br>
 <details>
   <summary>Подробно о модели.</summary>
+
+  **Внимание:** данная модель обучена для диаризации **эмоций,** а не спикеров. Но можно глянуть. Статья про модель [SPEECH EMOTION DIARIZATION: WHICH EMOTION APPEARS WHEN?](https://arxiv.org/pdf/2306.12991)
+
+  * Обучена для распознавания базовых эмоций (happy, sad, angry, neutral)
+  * Собран отдельный датасет the Zaion Emotion Dataset (ZED).
+    * Он содержит 180 высказываний длительностью от 1 до 15 секунд и охватывает 73 спикера разного возраста и пола.
+  * EDER(Emotion Diarization Error Rate) = 29.7.
 </details>
 
 ## Датасет для обучения моделей диаризации
 **VoxConverse**
-[diarizers-community/voxconverse](https://huggingface.co/datasets/diarizers-community/voxconverse)
+[diarizers-community/voxconverse](https://huggingface.co/speechbrain/emotion-diarization-wavlm-large)
 
 <details>
   <summary>О датасете</summary>
