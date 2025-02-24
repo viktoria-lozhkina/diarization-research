@@ -245,6 +245,12 @@ Training Datasets (Used to simulate audio mixtures)
 
 </details>
 
+
+[speechbrain/spkrec-ecapa-voxceleb](https://huggingface.co/speechbrain/spkrec-ecapa-voxceleb) <br>
+<details>
+  <summary>Подробно о модели.</summary>
+</details>
+
 ## Датасет для обучения моделей диаризации
 **VoxConverse**
 [diarizers-community/voxconverse](https://huggingface.co/datasets/diarizers-community/voxconverse)
@@ -283,7 +289,7 @@ Training Datasets (Used to simulate audio mixtures)
 [pyannote/segmentation-3.0](https://huggingface.1319lm.top/pyannote/segmentation-3.0)
 
 <details>
-  <summary>О модели</summary>
+  <summary>О модели.</summary>
   Модель возвращает временные метки (start, end) для каждого сегмента, где активна речь. <br>
   
   **Преимущества:**
@@ -297,6 +303,32 @@ Training Datasets (Used to simulate audio mixtures)
   - Требует много вычислительных ресурсов.<br>
   - Модель обучена в основном на английской речи, может хуже справляться с другими языками.
   - Может хуже справляться с нетипичными сценариями (данные обучения — дебаты, ток-шоу, интервью, телефонные разговоры).
+</details>
+
+### Модель от SpeechBrain
+[speechbrain/vad-crdnn-libriparty](https://huggingface.co/speechbrain/vad-crdnn-libriparty)
+
+<details>
+  <summary>О модели.</summary>
+  Модель возвращает матрицу вида: номер сегмента + старт + конец + наличие/отсутствие речи.
+
+  ```
+  segment_001  0.00  2.57 NON_SPEECH
+  segment_002  2.57  8.20 SPEECH
+  segment_003  8.20  9.10 NON_SPEECH
+  segment_004  9.10  10.93 SPEECH
+  segment_005  10.93  12.00 NON_SPEECH
+  segment_006  12.00  14.40 SPEECH
+  segment_007  14.40  15.00 NON_SPEECH
+  segment_008  15.00  17.70 SPEECH
+  ```
+  * Принимает на вход аудио формата: моно, 16 кГц.
+  * Обучалась на следующих датасетах:
+
+     - LibriParty: https://drive.google.com/file/d/1--cAS5ePojMwNY5fewioXAv9YlYAWzIJ/view?usp=sharing
+     - Musan: https://www.openslr.org/resources/17/musan.tar.gz
+     - CommonLanguage: https://zenodo.org/record/5036977/files/CommonLanguage.tar.gz?download=1
+
 </details>
 
 ### Архитектура SepFormer
@@ -319,6 +351,7 @@ Training Datasets (Used to simulate audio mixtures)
   
   - [speechbrain/sepformer-wham](https://huggingface.1319lm.top/speechbrain/sepformer-wham)
 </details>
+
 
 <details>
   <summary></summary>
