@@ -259,11 +259,11 @@ Training Datasets (Used to simulate audio mixtures)
 </details>
 
 ## Датасет для обучения моделей диаризации
-**VoxConverse**
+**1) VoxConverse**
 [diarizers-community/voxconverse](https://huggingface.co/speechbrain/emotion-diarization-wavlm-large)
 
 <details>
-  <summary>О датасете</summary>
+  <summary>О датасете.</summary>
   50 часов звучащей речи. Преимущественно английский язык.
   
   Датасет содержит следующие данные:
@@ -286,7 +286,22 @@ Training Datasets (Used to simulate audio mixtures)
   3. Аннотации прописаны вручную.
 </details>
 
-**DIHARD**
+**2) AMI Metting Corpus**
+[The AMI Meeting Corpus](https://groups.inf.ed.ac.uk/ami/corpus/)
+<details>
+  <summary>О датасете.</summary>
+  100 часов записей совещаний.
+
+  * Формат: видео, mp4. Придется переводить в wav.
+  * Язык: английский (не родной язык для спикеров).
+  * Запись велась в 3 разных помещениях.
+  * Ручная орфографическая транскрипция.
+  * Лицензия на корпус позволяет пользователям копировать, распространять и отображать данные для любых целей при условии указания проекта AMI.
+</details>
+
+[Задача диаризации с использованием данного корпуса от SpeechBrain.](https://github.com/speechbrain/speechbrain/blob/develop/recipes/AMI/Diarization/README.md)
+
+**3) DIHARD**
 В РАЗРАБОТКЕ
 
 ## Решения для сегментации говорящих
