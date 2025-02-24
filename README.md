@@ -1,7 +1,7 @@
 # diarization-research
 
 ## Модели для диаризации
-### PyAnnotate <br>
+### 1. PyAnnotate <br>
 [pyannote/speaker-diarization-3.1](https://huggingface.co/pyannote/speaker-diarization-3.1) <br>
 
 <details>
@@ -139,7 +139,7 @@
   - Для эмбеддинга: [pyannote/embedding](https://huggingface.1319lm.top/pyannote/embedding)
 </details>
 
-### NVIDIA
+### 2. NVIDIA
 [nvidia/diar_sortformer_4spk-v1](https://huggingface.co/nvidia/diar_sortformer_4spk-v1) <br>
 <details>
   <summary>Подробно о модели.</summary>
@@ -197,6 +197,54 @@ Training Datasets (Used to simulate audio mixtures)
 
 [Репозиторий от NVIDIA NeMo на Github](https://github.com/NVIDIA/NeMo/tree/main/examples/speaker_tasks/diarization) , посвящен задачам диаризации.
 
+### 3. SpeechBrain
+[speechbrain/spkrec-ecapa-voxceleb](https://huggingface.co/speechbrain/spkrec-ecapa-voxceleb) <br>
+<details>
+  <summary>Подробно о модели.</summary>
+    
+  **Внимание:** модель предназначется для верификации говорящих, но её можно адаптировать для диаризации (возможно, добавив этап кластеризации).
+  <details>
+  <summary>Возможный код для адаптации.</summary>
+  
+  ```
+  # Извлечение эмбеддингов
+  from speechbrain.pretrained import EncoderClassifier
+  classifier = EncoderClassifier.from_hparams(source="speechbrain/spkrec-ecapa-voxceleb")
+  embeddings = classifier.encode_batch("audio.wav")
+
+  # Кластеризация эмбеддингов
+  from sklearn.cluster import KMeans # алгоритм k-means для кластеризации данных
+  kmeans = KMeans(n_clusters=num_speakers)
+  labels = kmeans.fit_predict(embeddings)
+  ```
+
+</details>
+   
+  **Архитектура:** ECAPA-TDNN (Enhanced CNN-Augmented TDNN) — современная архитектура для извлечения эмбеддингов.
+   
+  * Сверточные слои (CNN): Для извлечения локальных признаков.
+  * Механизмы внимания (Attention): Для учета глобальных зависимостей.
+  * Канальное внимание (Channel Attention): Для улучшения качества эмбеддингов.
+
+**Входные данные**
+
+* Аудио: Модель принимает на вход аудиосигнал (например, в формате .wav).
+* Частота дискретизации: 16 кГц.
+
+**Выходные данные**
+
+* Эмбеддинги: Модель возвращает векторные представления размерностью 192.
+
+</details>
+
+<details>
+  <summary>Данные для обучения.</summary>
+  
+  * Модель обучена на датасете VoxCeleb (Voxceleb 1+ Voxceleb2), который содержит более 100 000 записей речи от более чем 1 000 говорящих.
+  * VoxCeleb включает записи из интервью, ток-шоу и других публичных выступлений.
+
+</details>
+
 ## Датасет для обучения моделей диаризации
 **VoxConverse**
 [diarizers-community/voxconverse](https://huggingface.co/datasets/diarizers-community/voxconverse)
@@ -224,6 +272,9 @@ Training Datasets (Used to simulate audio mixtures)
   2. Открыт и готов к использованию.
   3. Аннотации прописаны вручную.
 </details>
+
+**DIHARD**
+В РАЗРАБОТКЕ
 
 ## Решения для сегментации говорящих
 Ниже собраны интересные решения для задачи разделения говорящих (без диаризации = без идентификации конкретного говорящего).
