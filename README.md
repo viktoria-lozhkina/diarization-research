@@ -258,6 +258,9 @@ Training Datasets (Used to simulate audio mixtures)
   * EDER(Emotion Diarization Error Rate) = 29.7.
 </details>
 
+### 4. The LIUM SpkDiarization toolkit
+[Статья "LIUM SPKDIARIZATION: AN OPEN SOURCE TOOLKIT FOR DIARIZATION"](https://hal.science/hal-01433518/document)
+
 ## Датасет для обучения моделей диаризации
 **1) VoxConverse**
 [diarizers-community/voxconverse](https://huggingface.co/speechbrain/emotion-diarization-wavlm-large)
