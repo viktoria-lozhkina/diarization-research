@@ -259,21 +259,33 @@ Training Datasets (Used to simulate audio mixtures)
 </details>
 
 ### 4. The LIUM SpkDiarization toolkit
-[Статья "LIUM SPKDIARIZATION: AN OPEN SOURCE TOOLKIT FOR DIARIZATION"](https://hal.science/hal-01433518/document)
+[Статья "LIUM SPKDIARIZATION: AN OPEN SOURCE TOOLKIT FOR DIARIZATION"](https://hal.science/hal-01433518/document) <br>
+[Статья на Interspeech 2013 "An Open-source State-of-the-art Toolbox for Broadcast News Diarization"](https://www.isca-archive.org/interspeech_2013/rouvier13_interspeech.pdf)
 
 <details>
   <summary>Подробнее.</summary>
-  Это открытй инструмент для диаризации, разработанный лабораторией LIUM (Laboratoire d'Informatique de l'Université du Mans).<br>
+  Это открытый инструмент для диаризации, разработанный лабораторией LIUM. Интструмент создан для обработки радио- и телепередач. Он предоставляет готовое решение для задач мультимедиа и позволяет разрабатывать новые системы диаризации.<br>
+
+  * Инструмент включает в себя все необходимые пакеты и модели (UBM, модели для определения пола и речи/не-речи).
+  * Инструмент может использовать сторонние функции, такие как MFCC, HTK, SPro и текстовые файлы.
+  
   Используются следующие методы:
 
   * Извлечение признаков — MFCC.
   * Кластеризация — алгоритм гауссовых смесей (GMM).
   * Сегмантация — результаты сохраняются в формате RTTM.
 
-  Важно: инструмент написан на Java. Перед работой следует установить Java, а также скачать инструмент с [официального сайта.](https://projets-lium.univ-lemans.fr/spkdiarization/)
-  ```
-  п
-  ```
+  * Важно: инструмент написан на Java. Перед работой следует установить Java, а также скачать инструмент с [официального сайта.](https://projets-lium.univ-lemans.fr/spkdiarization/) <br>
+    *Разработан на Java для минимизации проблем с зависимостями и работает как самостоятельный JAR-файл.*
+  * В статьях рассказывают про два подхода: Single- and cross-show diarization (идентификация говорящего в одной записи и идентификация одного человека в нескольких разных записях). Для cross-show diarization лучше подходит ILP кластеризация.
+
+  * Лучшие результаты DER (на корпусе ESTER 2):
+
+  ||Single-show DER|Cross-show DER|
+  |-|-|-|
+  |CLR|11.27 %|20.43 %|
+  |ILP|8.35 %| 17.51 %|
+
 </details>
 
 ## Датасет для обучения моделей диаризации
