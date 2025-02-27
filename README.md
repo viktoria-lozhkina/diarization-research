@@ -296,6 +296,7 @@ Training Datasets (Used to simulate audio mixtures)
 <details>
   <summary>Подробнее.</summary>
   ALIZE — это открытая платформа для распознавания говорящих.
+  
   [Официальный сайт](https://alize.univ-avignon.fr/).
 
   **Структура инструмента:**
@@ -307,10 +308,14 @@ Training Datasets (Used to simulate audio mixtures)
     | LIA_SpkTools # Библиотека, на которой основаны другие части; она предоставляет функции высокого уровня поверх ALIZE-core.
   ```
 
-  Ссылки на гитхаб:
+  **Ссылки на гитхаб:**
 
   * [LIA_RAL](https://github.com/ALIZE-Speaker-Recognition/LIA_RAL)
   * [LIA_SpkSeg](https://github.com/ALIZE-Speaker-Recognition/LIA_RAL/tree/master/LIA_SpkSeg)
+
+  * Туториал по работе с инструментами [LIA_SpkSeg](https://alize.univ-avignon.fr/#:~:text=Tutorial%20for%20LIA_SpkSeg%20%E2%80%94%20Top%2Ddown%20Speaker%20Segmenting%20and%20Clustering%20System)
+
+    Инструмент работает в два этапа *(Top-down Speaker Segmenting and Clustering System):* сегментация спикеров (без идентификации) + кластеризация.
   
   **Преимущества:**
 
@@ -320,6 +325,8 @@ Training Datasets (Used to simulate audio mixtures)
   **Недостатки:**
 
   * Довольно давний инструмент — 2013 год.
+
+    
   
 </details>
 
