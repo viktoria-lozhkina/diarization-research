@@ -258,9 +258,10 @@ Training Datasets (Used to simulate audio mixtures)
   * EDER(Emotion Diarization Error Rate) = 29.7.
 </details>
 
+## Опенсорсные инструменты
 ### 4. The LIUM SpkDiarization toolkit
-[Статья "LIUM SPKDIARIZATION: AN OPEN SOURCE TOOLKIT FOR DIARIZATION"](https://hal.science/hal-01433518/document) <br>
-[Статья на Interspeech 2013 "An Open-source State-of-the-art Toolbox for Broadcast News Diarization"](https://www.isca-archive.org/interspeech_2013/rouvier13_interspeech.pdf)
+Статья ["LIUM SPKDIARIZATION: AN OPEN SOURCE TOOLKIT FOR DIARIZATION"](https://hal.science/hal-01433518/document) <br>
+Статья на Interspeech 2013 ["An Open-source State-of-the-art Toolbox for Broadcast News Diarization"](https://www.isca-archive.org/interspeech_2013/rouvier13_interspeech.pdf)
 
 <details>
   <summary>Подробнее.</summary>
@@ -287,6 +288,39 @@ Training Datasets (Used to simulate audio mixtures)
   |CLR|11.27 %|20.43 %|
   |ILP|8.35 %| 17.51 %|
 
+</details>
+
+### 5. ALIZÉ
+Статья ["ALIZE 3.0 - Open Source Toolkit for State-of-the-Art Speaker Recognition"](https://www.isca-archive.org/interspeech_2013/larcher13_interspeech.pdf)
+
+<details>
+  <summary>Подробнее.</summary>
+  ALIZE — это открытая платформа для распознавания говорящих.
+  [Официальный сайт](https://alize.univ-avignon.fr/).
+
+  **Структура инструмента:**
+  ```
+  | LIA_RAL
+    | LIA_SpkDet # Набор инструментов для выполнения всех задач, необходимых для системы аутентификации по голосу, — обучение модели, нормализация признаков, нормализация оценок и т. д.
+    | LIA_SpkSeg # Для диаризации, то что нужно.
+    | LIA_Utils # Утилиты для работы с различными форматами данных, используемыми в ALIZÉ, — GMM, функциями и т. д.
+    | LIA_SpkTools # Библиотека, на которой основаны другие части; она предоставляет функции высокого уровня поверх ALIZE-core.
+  ```
+
+  Ссылки на гитхаб:
+
+  * [LIA_RAL](https://github.com/ALIZE-Speaker-Recognition/LIA_RAL)
+  * [LIA_SpkSeg](https://github.com/ALIZE-Speaker-Recognition/LIA_RAL/tree/master/LIA_SpkSeg)
+  
+  **Преимущества:**
+
+  * Хорошо совмещается с другими решениями, теоретически можно встроить в Виспер.
+  * Опенсорсный.
+  
+  **Недостатки:**
+
+  * Довольно давний инструмент — 2013 год.
+  
 </details>
 
 ## Датасет для обучения моделей диаризации
