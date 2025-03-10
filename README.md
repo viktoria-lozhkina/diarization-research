@@ -455,6 +455,30 @@ Training Datasets (Used to simulate audio mixtures)
   - [speechbrain/sepformer-wham](https://huggingface.1319lm.top/speechbrain/sepformer-wham)
 </details>
 
+### Инструмент audioseg
+
+<details>
+  <summary>Подробнее</summary>
+  Это инструмент для сегментации аудио, он делит аудиозаписи на сегменты: речь, музыка, тишина и шум. Инструмент способен находить целевого говорящего. <br> 
+
+  * [Ссылка на GitHub](https://github.com/oliverwatts/audioseg/blob/master/README.md)
+  * **Формат входных данных:** аудио, 16 кГц, формата .wav
+  * Формат выходных данных:
+
+  ```
+  0.0000000 19.7126313 m
+  ```
+  Последний символ-буква означает:
+  ```
+  m: music only
+  s: speech from target presenter
+  ms: speech from target presenter with music in background
+  p: audio from package (pkg)
+  ```
+  * **Интервал обработки сигнала:** 10 мс
+  * Теоретически совместим с Whisper.
+
+</details>
 
 <details>
   <summary></summary>
