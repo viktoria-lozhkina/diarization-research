@@ -258,8 +258,49 @@ Training Datasets (Used to simulate audio mixtures)
   * EDER(Emotion Diarization Error Rate) = 29.7.
 </details>
 
+### 4. Kaldi
+[Официальная документация.](https://kaldi-asr.org/doc/) <br>
+[Примеры скриптов для задачи диаризации.](https://github.com/kaldi-asr/kaldi/tree/master/egs/callhome_diarization) <br>
+[Доступные модели, в том числе для диаризации.](https://kaldi-asr.org/models.html)<br>
+
+<details>
+  <summary>Подробнее.</summary>
+
+  Можно использовать с Whisper.
+  
+  Методы для распознавания и идентификации спикеров в Kaldi:
+
+  * x-vector для извлечения признаков.
+  * Алгоритм PLDA (Probabilistic Linear Discriminant Analysis) для идентификации говорящих.
+
+  Подробнее о методе распознавания рассказывают в статье 2018 года [X-VECTORS: ROBUST DNN EMBEDDINGS FOR SPEAKER RECOGNITION](https://www.danielpovey.com/files/2018_icassp_xvectors.pdf). **Кратко:** используют аугментации данных (добавление шума и реверберации) для увеличения объема и разнообразия данных. На этом обучают модель. Преимущество x-векторов: лучше масштабируются с увеличением объема данных и не требуют транскрибированных данных для обучения.
+
+  * Обучали на английском языке (записи телефонных и микрофонных разговоров на английском языке (SWBD и SRE)).
+  
+  
+</details>
+
+### 5. Meta Llama
+
+<details>
+  <summary></summary>
+
+  [Лицензия](https://huggingface.co/meta-llama/Meta-Llama-3-8B/blob/main/LICENSE). **Кратко:** модель общедоступна, для коммерческого использования — если продукт или услуга имеет более 700 миллионов активных пользователей, требуется отдельная лицензия от Meta.<br>
+
+  **Нельзя:** использовать материалы Llama для улучшения других языковых моделей (кроме Llama 3 и её производных).<br>
+  **Обязательно:** Указание на использование Meta Llama 3.Сохранение уведомления об авторских правах.
+
+
+  
+  текст
+  ```
+  п
+  ```
+</details>
+
+
 ## Опенсорсные инструменты
-### 4. The LIUM SpkDiarization toolkit
+### 5. The LIUM SpkDiarization toolkit
 Статья ["LIUM SPKDIARIZATION: AN OPEN SOURCE TOOLKIT FOR DIARIZATION"](https://hal.science/hal-01433518/document) <br>
 Статья на Interspeech 2013 ["An Open-source State-of-the-art Toolbox for Broadcast News Diarization"](https://www.isca-archive.org/interspeech_2013/rouvier13_interspeech.pdf)
 
@@ -290,7 +331,7 @@ Training Datasets (Used to simulate audio mixtures)
 
 </details>
 
-### 5. ALIZÉ
+### 6. ALIZÉ
 Статья ["ALIZE 3.0 - Open Source Toolkit for State-of-the-Art Speaker Recognition"](https://www.isca-archive.org/interspeech_2013/larcher13_interspeech.pdf)
 
 <details>
@@ -330,7 +371,7 @@ Training Datasets (Used to simulate audio mixtures)
   
 </details>
 
-### 6. Vosk
+### 7. Vosk
 [Официальный сайт.](https://alphacephei.com/vosk/) <br>
 [GitHub.](https://github.com/alphacep/vosk-api)<br>
 Библиотека инструментов для распознавания речи. На сайте указано, что поддерживается в том числе идентификация спикеров.
@@ -349,6 +390,7 @@ Training Datasets (Used to simulate audio mixtures)
     **DeepSpeech:** Vosk проще в использовании и поддерживает больше языков, но DeepSpeech может быть более точным для английского языка.<br>
     
 </details>
+
 
 
 ## Датасет для обучения моделей диаризации
