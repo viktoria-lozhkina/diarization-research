@@ -330,6 +330,27 @@ Training Datasets (Used to simulate audio mixtures)
   
 </details>
 
+### 6. Vosk
+[Официальный сайт.](https://alphacephei.com/vosk/) <br>
+[GitHub.](https://github.com/alphacep/vosk-api)<br>
+Библиотека инструментов для распознавания речи. На сайте указано, что поддерживается в том числе идентификация спикеров.
+
+<details>
+  <summary>Подробнее.</summary>
+
+  * Поддерживает 20 языков, в том числе русский.
+  * Есть стандартная и маленькая версии модели: vosk-model-ru-0.42 и vosk-model-small-ru-0.22. [Ссылка на сводную таблицу с моделями и данными о WER](https://alphacephei.com/vosk/models#:~:text=Apache%202.0-,Russian,-vosk%2Dmodel%2Dru)
+  * Может работать автономно без сети, оптимизирована для работы на устройствах с низкой вычислительной мощностью, таких как Raspberry Pi.
+  * Предоставляет API для Python, Java, Node.js, C# и других языков программирования. Дополнительно: [Скрипты обучения моделей распознавания речи с помощью инструментов Kaldi](https://github.com/alphacep/vosk-api/tree/master/training)
+
+  * Модель **не** совместима с Whisper. [Статья на Хабре о сравнении Vosk и Whisper](https://habr.com/ru/articles/814057/) — автор утверждает, что Vosk работает быстрее и требует меньше ресурсов, но Whisper обеспечивает более высокую точность, особенно для многоязычных задач.
+  * Сравнение с другими решениями: <br>
+    **PyAnnote:** PyAnnote специализируется на диаризации и предоставляет более продвинутые инструменты для разделения речи по спикерам.<br>
+    **DeepSpeech:** Vosk проще в использовании и поддерживает больше языков, но DeepSpeech может быть более точным для английского языка.<br>
+    
+</details>
+
+
 ## Датасет для обучения моделей диаризации
 **1) VoxConverse**
 [diarizers-community/voxconverse](https://huggingface.co/speechbrain/emotion-diarization-wavlm-large)
@@ -480,6 +501,10 @@ Training Datasets (Used to simulate audio mixtures)
 
 </details>
 
+
+## Другое, полезно знать
+### DeepSpeech
+
 <details>
   <summary></summary>
   текст
@@ -487,3 +512,4 @@ Training Datasets (Used to simulate audio mixtures)
   п
   ```
 </details>
+
