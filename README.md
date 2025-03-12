@@ -280,27 +280,28 @@ Training Datasets (Used to simulate audio mixtures)
   
 </details>
 
-### 5. Meta Llama
+### 5. Meta Llama / GOOGLE
+
+[Фреймворк для диаризации.](https://github.com/google/speaker-id/tree/master/DiarizationLM)<br>
+[Модель google/DiarizationLM-8b-Fisher-v2 на HugingFace.](https://huggingface.co/google/DiarizationLM-8b-Fisher-v2)
 
 <details>
-  <summary></summary>
+  <summary>Подробнее.</summary>
 
   [Лицензия](https://huggingface.co/meta-llama/Meta-Llama-3-8B/blob/main/LICENSE). **Кратко:** модель общедоступна, для коммерческого использования — если продукт или услуга имеет более 700 миллионов активных пользователей, требуется отдельная лицензия от Meta.<br>
 
   **Нельзя:** использовать материалы Llama для улучшения других языковых моделей (кроме Llama 3 и её производных).<br>
   **Обязательно:** Указание на использование Meta Llama 3.Сохранение уведомления об авторских правах.
 
-
-  
-  текст
-  ```
-  п
-  ```
+  * Модель основана на языковой модели (Llama 3), адаптированной для работы с аудиоданными.
+  * Модель обучена на данных из Fisher Corpus, который содержит записи **телефонных разговоров на английском языке.**
+  * **Архитектура:** трансформеры.
+  * Модель имеет 8 млрд параметров, требует значительных ресурсов.
 </details>
 
 
 ## Опенсорсные инструменты
-### 5. The LIUM SpkDiarization toolkit
+### 6. The LIUM SpkDiarization toolkit
 Статья ["LIUM SPKDIARIZATION: AN OPEN SOURCE TOOLKIT FOR DIARIZATION"](https://hal.science/hal-01433518/document) <br>
 Статья на Interspeech 2013 ["An Open-source State-of-the-art Toolbox for Broadcast News Diarization"](https://www.isca-archive.org/interspeech_2013/rouvier13_interspeech.pdf)
 
@@ -331,7 +332,7 @@ Training Datasets (Used to simulate audio mixtures)
 
 </details>
 
-### 6. ALIZÉ
+### 7. ALIZÉ
 Статья ["ALIZE 3.0 - Open Source Toolkit for State-of-the-Art Speaker Recognition"](https://www.isca-archive.org/interspeech_2013/larcher13_interspeech.pdf)
 
 <details>
@@ -371,7 +372,7 @@ Training Datasets (Used to simulate audio mixtures)
   
 </details>
 
-### 7. Vosk
+### 8. Vosk
 [Официальный сайт.](https://alphacephei.com/vosk/) <br>
 [GitHub.](https://github.com/alphacep/vosk-api)<br>
 Библиотека инструментов для распознавания речи. На сайте указано, что поддерживается в том числе идентификация спикеров.
@@ -573,8 +574,22 @@ Training Datasets (Used to simulate audio mixtures)
   
 </details>
 
+### Модель для диаризации на основе wav2vec2
+
+[Ivydata/wav2vec2-large-speech-diarization-jp](https://huggingface.co/Ivydata/wav2vec2-large-speech-diarization-jp)
+
 <details>
-  <summary></summary>
+  <summary>Подробнее.</summary>
+
+  Улучшенная версия модели от Facebook [facebook/wav2vec2-large-xlsr-53.](https://huggingface.co/facebook/wav2vec2-large-xlsr-53) Нацеленная на задачу диаризации.
+
+  * Язык: японский.
+  * Обучающий датасет: телефонные разговоры [CallHome](https://media.talkbank.org/ca/CallHome/jpn/).
+  * Метрики модели: неизвестны.
+</details>
+
+<details>
+  <summary>Подробнее.</summary>
   текст
   ```
   п
