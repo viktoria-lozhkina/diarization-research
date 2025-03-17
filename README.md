@@ -278,6 +278,7 @@ Training Datasets (Used to simulate audio mixtures)
 [Официальная документация.](https://kaldi-asr.org/doc/) <br>
 [Примеры скриптов для задачи диаризации.](https://github.com/kaldi-asr/kaldi/tree/master/egs/callhome_diarization) <br>
 [Доступные модели, в том числе для диаризации.](https://kaldi-asr.org/models.html)<br>
+Лицензия Apache 2.0 -> открытое использование.
 
 <details>
   <summary>Подробнее.</summary>
@@ -462,8 +463,6 @@ Training Datasets (Used to simulate audio mixtures)
 
 </details>
 
-**3) DIHARD**
-В РАЗРАБОТКЕ
 
 ## Решения для сегментации говорящих
 Ниже собраны интересные решения для задачи разделения говорящих (без диаризации = без идентификации конкретного говорящего).
@@ -602,13 +601,5 @@ Training Datasets (Used to simulate audio mixtures)
   * Язык: японский.
   * Обучающий датасет: телефонные разговоры [CallHome](https://media.talkbank.org/ca/CallHome/jpn/).
   * Метрики модели: неизвестны.
-</details>
-
-<details>
-  <summary>Подробнее.</summary>
-  текст
-  ```
-  п
-  ```
 </details>
 
