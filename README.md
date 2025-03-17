@@ -215,6 +215,8 @@ Training Datasets (Used to simulate audio mixtures)
 
 ### 3. SpeechBrain
 [speechbrain/spkrec-ecapa-voxceleb](https://huggingface.co/speechbrain/spkrec-ecapa-voxceleb) <br>
+Лицензия Apache 2.0 -> открыта к использованию.
+
 <details>
   <summary>Подробно о модели.</summary>
     
