@@ -3,6 +3,7 @@
 ## Модели для диаризации
 ### 1. PyAnnotate <br>
 [pyannote/speaker-diarization-3.1](https://huggingface.co/pyannote/speaker-diarization-3.1) <br>
+[Лицензия](https://huggingface.co/datasets/choosealicense/licenses/blob/main/markdown/mit.md) — модель открыта для неограниченного использования.
 
 <details>
   <summary>Подробно о модели.</summary>
@@ -141,6 +142,21 @@
 
 ### 2. NVIDIA
 [nvidia/diar_sortformer_4spk-v1](https://huggingface.co/nvidia/diar_sortformer_4spk-v1) <br>
+[Лицензия](https://spdx.org/licenses/CC-BY-NC-4.0)
+
+<details>
+  <summary>Кратко о лицензии.</summary>
+  
+  **Можно:**
+  * Делиться: Копировать и распространять материал в любом формате.
+  * Адаптировать: Изменять, преобразовывать и создавать производные работы на основе материала.
+
+  **Нужно**
+  * Указать авторство.
+  * Если создаются производные работы, они также должны распространяться под лицензией CC-BY-NC-4.0.
+
+  **Запрещено коммерческое использование.** Для коммерческого использования вам необходимо получить разрешение от автора.
+</details>
 <details>
   <summary>Подробно о модели.</summary>
   Предобученная модель для диаризции от NVIDIA. Поддерживает распознавание до 4 спикеров.
